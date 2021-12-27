@@ -1,7 +1,7 @@
 import { Flex, Grid, Image, Icon } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { RiArrowLeftLine } from 'react-icons/ri';
+import { RiArrowLeftSLine } from 'react-icons/ri';
 
 export default function Header() {
   const { asPath } = useRouter();
@@ -20,20 +20,22 @@ export default function Header() {
     >
       <Grid
         h='100%'
-        templateColumns='repeat(3, 1fr)'
+        mx='auto'
+        w='100%'
         maxW='1160px'
         alignItems='center'
+        templateColumns='repeat(3, 1fr)'
         justifyContent='center'
       >
         {isNotHomePage &&
           <Link href='/'>
             <a>
-              <Icon as={RiArrowLeftLine} fontSize={['20','40']} justifySelf='start' />
+              <Icon as={RiArrowLeftSLine} fontSize={['20','40']} justifySelf='start' />
             </a>
           </Link>}
         <Image
           w={['81px', '184px']}
-          src='images/Logo.svg'
+          src='/Logo.svg'
           alt='World trip'
           justifySelf='center'
           gridColumn='2'
