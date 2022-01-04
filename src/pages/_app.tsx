@@ -6,9 +6,9 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 
-
-
 import '../../styles/slider.scss';
+
+
 import NextNProgress from 'nextjs-progressbar';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {

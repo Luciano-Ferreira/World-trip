@@ -84,10 +84,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const prismic = getPrismicClient();
-  const slug = context.params;
+  
+  const params = context.params;
+  const slug = params?.slug;
   const res = await prismic.getByUID('continent', String(slug), {});
 
-  console.log(res)
 
   const continent = {
     slug: res.uid,

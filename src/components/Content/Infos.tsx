@@ -65,7 +65,7 @@ export default function Infos({continent}: ContinentProps) {
           fontSize={['md', 'xl']}
           color='gray.700'
         >
-          cities +100
+          Cities +100
           <Popover>
             <PopoverTrigger>
               <span>
