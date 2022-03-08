@@ -11,6 +11,7 @@ import Prismic from '@prismicio/client';
 import { useRouter } from 'next/dist/client/router';
 import Loading from '../../components/Loading';
 
+
 export interface ContinentProps {
   continent: {
     slug: string;
@@ -28,6 +29,13 @@ export interface ContinentProps {
       flag: string;
     }[]
   }
+}
+
+interface City100Prop {
+  city: string; 
+  country: string; 
+  thumbnail: { url: string; }; 
+  flag: { url: string; }; 
 }
 
 export default function Continent({continent}: ContinentProps) {
@@ -98,7 +106,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     languages: res.data.languages,
     cities: res.data.cities,
     cities_list: res.data.cities_list,
-    cities100: res.data.cities100.map((city: { city: string; country: string; thumbnail: { url: string; }; flag: { url: string; }; }) => {
+    cities100: res.data.cities100.map((city: City100Prop) => {
       return {
         city: city.city,
         country: city.country,
